@@ -6,4 +6,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\CapstoneGeneratorAI\CapstoneGeneratorAI.Domain.csproj" />
+  </ItemGroup>
+
 </Project>

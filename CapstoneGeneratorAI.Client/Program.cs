@@ -1,10 +1,16 @@
 using CapstoneGeneratorAI.Client.Components;
-
+using CapstoneGeneratorAI.Client.Services;
+using CapstoneGeneratorAI.Infrastructure;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents();
+builder.Services.AddInfrastructure(builder.Configuration);
+builder.Services.AddScoped<PromptClient>();
+builder.Services.AddHttpClient("MyApi",options =>
+options.BaseAddress = new Uri("https://localhost:7094"));
+
 
 var app = builder.Build();
 

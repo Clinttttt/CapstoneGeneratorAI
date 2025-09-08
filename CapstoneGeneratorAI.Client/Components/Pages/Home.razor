@@ -1,7 +1,55 @@
 ﻿@page "/"
 
-<PageTitle>Home</PageTitle>
+@inject HttpClient Http
+@rendermode InteractiveServer
+@using CapstoneGeneratorAI.Client.Services
+@using CapstoneGeneratorAI.Domain.DTOs
+@using CapstoneGeneratorAI.Domain.Interface
+@using static CapstoneGeneratorAI.Domain.Enums.Industry
+@inject PromptClient promptClient
 
-<h1>Hello, world!</h1>
+<h3>Choose Industry</h3>
+<select @bind="request.industry">
+    @foreach (Industry_Options industry in Enum.GetValues(typeof(Industry_Options)))
+    {
+        <option value="@industry">@industry</option>
+    }
+</select>
 
-Welcome to your new app.
+<h3>Choose Project Type</h3>
+<select @bind="request.type">
+    @foreach (Project_Type type in Enum.GetValues(typeof(Project_Type)))
+    {
+        <option value="@type">@type</option>
+    }
+</select>
+
+<br />
+
+<button @onclick="Generate">Generate</button>
+
+@if (datas is not null)
+{
+    <h1>title:@datas.Title</h1>
+    <h1>description:@datas.Description</h1>
+    <h1>Features:</h1>
+    foreach (var d in datas.Features!)
+    {
+      
+        <li>@d</li>
+    }
+}
+else
+{
+    <h1>null</h1> 
+}
+
+@code {
+    public ResponseDTO? datas { get; set; }
+    public RequestDTO request { get; set; } = new RequestDTO();
+
+    private async Task Generate()
+    {
+        datas = await promptClient.AskAsync(request);
+    }
+}
