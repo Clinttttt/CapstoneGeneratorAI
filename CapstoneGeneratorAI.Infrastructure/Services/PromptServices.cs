@@ -41,21 +41,18 @@ namespace CapstoneGeneratorAI.Infrastructure.Services
                 Project_Type.Web_App => "Web Application",
                 Project_Type.Mobile_App => "Mobile Application",
                 Project_Type.Data_App => "Data Application",
-                Project_Type.Desktop_App => "Desktop Application"
+                Project_Type.Desktop_App => "Desktop Application",
+                Project_Type.IoT_App => "IOT Application"
 ,
                 _ => "any type of application"
             };
-            return $"Generate exactly 1 unique capstone project title. of {industries} and the type of {types} Return only the title, a clear description and make sure to have 5 features with 2-3 words each.";
-          
+            return $"Generate exactly 1 unique capstone project title and 5 features of it. of {industries} and the type of {types} Return only the title, a clear description and make sure to have minimum of 5 features with 2-3 words each.";
+
+
 
         }
 
 
-
-
-
     }
 
-
 }
-
