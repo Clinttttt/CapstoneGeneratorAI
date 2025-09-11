@@ -31,6 +31,7 @@ namespace CapstoneGeneratorAI.Domain.Enums
             IoT_App,
             Data_App,
             AI_App,
+            All,
         }
 
     }
