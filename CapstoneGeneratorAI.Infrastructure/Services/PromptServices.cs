@@ -23,7 +23,7 @@ namespace CapstoneGeneratorAI.Infrastructure.Services
         {
             var industries = industry switch
             {
-                Industry_Options.All => "On Any Field",
+                Industry_Options.All => "random field",
                 Industry_Options.Energy => "Energy",
                 Industry_Options.Business => "Business",
                 Industry_Options.Entertainment => "Entertainment",

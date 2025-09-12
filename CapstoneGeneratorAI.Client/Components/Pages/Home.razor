@@ -91,19 +91,19 @@ else
 
 
 <div class="mt-3 sm:mt-3 lg:mt-8 absolute text-center  top-0 left-1/2 transform -translate-x-1/2">
-    <h1 class="text-md sm:text-2xl lg:text-4xl font-bold  text-primary ">Capstone Generator</h1>
+    <h1 class="text-md sm:text-2xl lg:text-4xl font-bold  bg-gradient-to-b from-neutral-600 to-stone-950 bg-clip-text text-transparent ">Capstone Generator</h1>
     <h4 class="text-xs font-light sm:text-md lg:text-lg text-neutral my-1">Find your perfect capstone idea today!</h4>
 </div>
 
 
-<div class="my-3 md:my-3  flex flex-col lg:flex-row  gap-5 sm:gap-10 flex  items-center justify-center h-screen  justify-around">
+<div class="my-6 sm:my-3 lg:my-9 flex flex-col lg:flex-row  gap-5 sm:gap-10  flex  items-center justify-center h-screen  justify-around ">
 
 
 
 
-    <div class="h-[40%] sm:h-[40%] w-[93%] md:h-[40%] lg:h-[48%] lg:w-[33%] border border-black relative rounded-md bg-base-100" style="border: solid 1px rgba(0,0,0,0.2)">
+    <div class="h-[35%] sm:h-[35%] w-[93%] md:h-[35%] lg:h-[48%] lg:w-[33%] border border-black relative rounded-md bg-base-100" style="border: solid 1px rgba(0,0,0,0.2)">
         <div class="top-4 left-4 p-4 w-full">
-            <h1 class="text-lg font-light my-2 text-neutral">Filters</h1>
+            <h1 class="text-lg font-semibold my-2 text-neutral">Filters</h1>
 
             <select @bind="request.industry" class=" select select-accent !w-full my-1" style="border: solid 1px rgba(0,0,0,0.2)">
                 <option value="@Industry_Options.All" selected>All Industries</option>
@@ -118,7 +118,7 @@ else
                 <option value="@Industry_Options.Government">Government</option>
 
             </select>
-            <h1 class="text-lg font-light my-2 text-neutral">Project Type</h1>
+            <h1 class="text-lg font-semibold my-2 text-neutral">Project Type</h1>
             <select @bind="request.type" class=" select select-accent !w-full my-1" style="border: solid 1px rgba(0,0,0,0.2)">
                 <option value="@Project_Type.All" selected>All Project Types</option>
                 <option value="@Project_Type.Data_App">Data Application</option>
@@ -130,14 +130,14 @@ else
 
             </select>
             <div class="justify-center flex w-full my-4 ">
-                <button @onclick="Generate" class="btn btn-wide btn-accent text-md">Generate Ideas</button>
+                <button @onclick="Generate" class="btn btn-wide btn-accent  text-md focus:outline-none focus:ring-2 focus:ring-accent">Generate Ideas</button>
             </div>
         </div>
     </div>
 
     @if (datas is not null)
     {
-        <div class=" h-[45%] sm:h-[43%] w-[93%] md:h-[40%] lg:h-[62%] lg:w-[40%] border border-black  rounded-md bg-base-100 relative overflow-auto" style="border: solid 1px rgba(0,0,0,0.2)">
+        <div class=" h-[48%] sm:h-[43%] w-[93%] md:h-[42%] lg:h-[62%] lg:w-[40%] border border-black  rounded-md bg-base-100 relative overflow-auto scrollbar-hide" style="border: solid 1px rgba(0,0,0,0.2)">
             <div class="justify-center flex flex-col p-3">
                 <h1 class="text-2xl font-bold my-2 text-neutral ">@datas.Title</h1>
                 <div class="my-2">
@@ -153,8 +153,8 @@ else
                 }
 
             </div>
-            <div class="justify-end p-3 flex">
-                <button @onclick="Generate" class="btn btn-accent  max-w-fit rounded-sm">
+            <div class="justify-end items-end p-3 flex">
+                <button @onclick="Generate" class="btn btn-accent  max-w-fit rounded-sm focus:outline-none focus:ring-2 focus:ring-accent">
                     Next Idea <svg class="w-[25px] h-[25px] text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
                         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m9 5 7 7-7 7" />
                     </svg>
@@ -163,7 +163,7 @@ else
         </div>
 
     }else{
-        <div class=" h-[45%] sm:h-[43%] w-[93%] md:h-[40%] lg:h-[62%] lg:w-[40%] border border-black  rounded-md bg-base-100 relative overflow-auto items-center flex justify-center " style="border: solid 1px rgba(0,0,0,0.2)">
+        <div class=" h-[48%] sm:h-[43%] w-[93%] md:h-[42%] lg:h-[62%] lg:w-[40%] border border-black  rounded-md bg-base-100 relative overflow-auto items-center flex justify-center " style="border: solid 1px rgba(0,0,0,0.2)">
 
             <h1 style="color:rgb(155, 161, 170)">Your capstone ideas will appear here</h1>
  
