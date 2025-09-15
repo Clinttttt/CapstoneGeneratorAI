@@ -53,7 +53,7 @@ namespace CapstoneGeneratorAI.Infrastructure.Services
                      required = new[] { "title", "description", "features" }
                 }
             };
-            var response = await _http.PostAsJsonAsync("http://localhost:11434/api/chat", payload);
+            var response = await _http.PostAsJsonAsync("http://host.docker.internal:11434/api/chat", payload);
 
             if (!response.IsSuccessStatusCode)
                 return null;

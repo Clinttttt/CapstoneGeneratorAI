@@ -1,5 +1,5 @@
 ﻿using CapstoneGeneratorAI.Domain.Interface;
-using CapstoneGeneratorAI.Infrastructure.Data;
+
 using CapstoneGeneratorAI.Infrastructure.Services;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -17,9 +17,8 @@ namespace CapstoneGeneratorAI.Infrastructure
     {
         public static IServiceCollection AddInfrastructure(this IServiceCollection service, IConfiguration configuration)
         {
-            service.AddDbContext<ApplicationDbContext>(options =>
-            options.UseSqlServer(configuration.GetConnectionString("DefaultConnection")));
-            service.AddScoped<INoteTakingServices, NoteTakingServices>();
+            
+      
             service.AddScoped<IPromptServices, PromptServices>();
             service.AddHttpClient();
             service.AddScoped<PromptApiService>();

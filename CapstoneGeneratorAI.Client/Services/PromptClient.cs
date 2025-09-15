@@ -13,7 +13,7 @@ namespace CapstoneGeneratorAI.Client.Services
         }
         public async Task<ResponseDTO?> AskAsync(RequestDTO request)
         {
-            var response = await _http.PostAsJsonAsync("https://localhost:7094/api/LiamaAi/Ask", request);
+            var response = await _http.PostAsJsonAsync("https://host.docker.internal:7094/api/LiamaAi/Ask", request);
             if (!response.IsSuccessStatusCode)
             {
                 return null;
